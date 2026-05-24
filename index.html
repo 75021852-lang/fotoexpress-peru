@@ -61,8 +61,8 @@
   .step { background: white; padding: 36px 28px; }
   .step:first-child { border-radius: 16px 0 0 16px; }
   .step:last-child { border-radius: 0 16px 16px 0; }
-  .step-num { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: var(--cream2); line-height: 1; margin-bottom: 16px; }
-  .step h3 { font-size: 16px; font-weight: 500; margin-bottom: 8px; }
+  .step-num { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 700; color: #c8b99a; line-height: 1; margin-bottom: 16px; }
+  .step h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #0f0f0f; }
   .step p { font-size: 14px; color: var(--muted); line-height: 1.6; font-weight: 300; }
 
   /* CALCULATOR */
@@ -133,16 +133,47 @@
   .bcp-badge { display: inline-block; background: var(--cream); border: 1px solid var(--border); color: var(--muted); font-size: 12px; padding: 6px 16px; border-radius: 50px; margin-top: 12px; font-style: italic; }
 
   /* ORDER FORM SECTION */
-  .order-section { background: var(--dark); padding: 88px 24px; }
+  .order-section { background: var(--dark); padding: 88px 24px; position: relative; overflow: hidden; }
+  .order-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(201,168,76,0.08) 0%, transparent 70%); pointer-events: none; }
   .order-section .section-title { color: white; }
   .order-section .section-sub { color: rgba(255,255,255,0.45); }
-  .form-wrapper { max-width: 700px; margin: 0 auto; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); }
-  .form-wrapper iframe { width: 100%; height: 900px; border: none; display: block; background: white; }
+  .order-card { max-width: 620px; margin: 0 auto; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; overflow: hidden; position: relative; }
+  .order-steps-mini { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .order-step-mini { padding: 20px 16px; text-align: center; border-right: 1px solid rgba(255,255,255,0.06); }
+  .order-step-mini:last-child { border-right: none; }
+  .order-step-mini .osm-icon { font-size: 22px; margin-bottom: 6px; display: block; }
+  .order-step-mini .osm-text { font-size: 12px; color: rgba(255,255,255,0.4); font-weight: 300; line-height: 1.4; }
+  .order-step-mini .osm-title { font-size: 13px; color: white; font-weight: 500; margin-bottom: 3px; }
+  .order-main { padding: 40px 36px; text-align: center; }
+  .order-form-btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: white; color: var(--dark);
+    padding: 18px 36px; border-radius: 50px;
+    text-decoration: none; font-size: 16px; font-weight: 500;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px rgba(255,255,255,0.1);
+    margin-bottom: 16px;
+  }
+  .order-form-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(255,255,255,0.15); }
+  .order-form-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+  .order-or { font-size: 13px; color: rgba(255,255,255,0.25); margin: 20px 0; display: flex; align-items: center; gap: 12px; }
+  .order-or::before, .order-or::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.08); }
+  .order-wa-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--green); color: white;
+    padding: 16px 32px; border-radius: 50px;
+    text-decoration: none; font-size: 15px; font-weight: 500;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .order-wa-btn:hover { background: var(--green-dark); transform: translateY(-1px); }
+  .order-note { font-size: 12px; color: rgba(255,255,255,0.2); margin-top: 20px; font-weight: 300; line-height: 1.6; }
+  .order-features { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+  .order-feat { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); color: rgba(255,255,255,0.35); font-size: 11px; padding: 5px 12px; border-radius: 50px; }
 
   /* CTA */
-  .cta-section { background: var(--cream2); padding: 100px 24px; text-align: center; }
-  .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 52px); font-weight: 700; margin-bottom: 16px; letter-spacing: -0.5px; }
-  .cta-section p { font-size: 16px; color: var(--muted); margin-bottom: 36px; font-weight: 300; }
+  .cta-section { background: var(--dark); padding: 100px 24px; text-align: center; position: relative; overflow: hidden; }
+  .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 52px); font-weight: 700; margin-bottom: 16px; letter-spacing: -0.5px; color: white; }
+  .cta-section p { font-size: 16px; color: rgba(255,255,255,0.45); margin-bottom: 36px; font-weight: 300; }
 
   /* FOOTER */
   footer { background: #080808; padding: 36px 24px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
@@ -160,7 +191,10 @@
     .step:last-child { border-radius: 0 0 16px 16px; }
     .steps { grid-template-columns: 1fr; gap: 2px; }
     .calc-grid { grid-template-columns: 1fr; }
-    .form-wrapper iframe { height: 1100px; }
+    .order-steps-mini { grid-template-columns: 1fr; }
+    .order-step-mini { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .order-main { padding: 28px 20px; }
+    .order-form-btn { padding: 16px 24px; font-size: 15px; }
   }
 </style>
 </head>
@@ -213,7 +247,7 @@
       <div class="step">
         <div class="step-num">01</div>
         <h3>Llena el formulario</h3>
-        <p>Ingresa tus datos, elige el tamaño y sube tus fotos directamente en la página. Todo en un solo lugar.</p>
+        <p>Ingresa tus datos, elige el tamaño y sube tus fotos. Luego coordina con nosotros por WhatsApp.</p>
       </div>
       <div class="step">
         <div class="step-num">02</div>
@@ -288,18 +322,18 @@
       </div>
 
       <!-- PACKS -->
-      <p class="packs-title">O elige un pack con descuento</p>
+      <p class="packs-title">Packs con descuento · Tamaño 10×15 cm</p>
       <div class="packs">
         <div class="pack" onclick="selectPack(this, 18, 'Pack 10 fotos 10×15', 10)">
-          <div><div class="pack-name">Pack 10 fotos 10×15</div><div class="pack-save">Ahorras S/. 7</div></div>
+          <div><div class="pack-name">Pack 10 fotos · 10×15 cm</div><div class="pack-save">Ahorras S/. 7</div></div>
           <div class="pack-price">S/. 18</div>
         </div>
         <div class="pack" onclick="selectPack(this, 32, 'Pack 20 fotos 10×15', 20)">
-          <div><div class="pack-name">Pack 20 fotos 10×15</div><div class="pack-save">Ahorras S/. 18</div></div>
+          <div><div class="pack-name">Pack 20 fotos · 10×15 cm</div><div class="pack-save">Ahorras S/. 18</div></div>
           <div class="pack-price">S/. 32</div>
         </div>
         <div class="pack" onclick="selectPack(this, 70, 'Pack 50 fotos 10×15', 50)">
-          <div><div class="pack-name">Pack 50 fotos 10×15</div><div class="pack-save">Ahorras S/. 55</div></div>
+          <div><div class="pack-name">Pack 50 fotos · 10×15 cm</div><div class="pack-save">Ahorras S/. 55</div></div>
           <div class="pack-price">S/. 70</div>
         </div>
       </div>
@@ -390,19 +424,72 @@
 
 <!-- FORMULARIO DE PEDIDO -->
 <section class="order-section" id="pedido">
-  <div class="container">
-    <p class="section-label" style="color:var(--gold);">Pedido online</p>
-    <h2 class="section-title">Haz tu pedido aquí</h2>
-    <p class="section-sub">Sube tus fotos y llena tus datos. Te contactamos por WhatsApp en menos de 24 horas.</p>
-    <div class="form-wrapper">
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLScc4xATxV-LuUxmSILvMvRiV-SMFKYnm8awGVSdwKNXCVsP5w/viewform?embedded=true"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
-        title="Formulario de pedido FotoExpress Peru">
-        Cargando formulario...
-      </iframe>
+  <div class="container" style="position:relative;">
+    <p class="section-label" style="color:var(--gold);">Hacer pedido</p>
+    <h2 class="section-title">¿Cómo quieres pedir?</h2>
+    <p class="section-sub">Elige la opción que prefieras. Ambas llegan directo a nosotros.</p>
+
+    <div class="order-card">
+      <!-- MINI STEPS -->
+      <div class="order-steps-mini">
+        <div class="order-step-mini">
+          <span class="osm-icon">📋</span>
+          <div class="osm-title">Llena el formulario</div>
+          <div class="osm-text">Sube tus fotos y datos</div>
+        </div>
+        <div class="order-step-mini">
+          <span class="osm-icon">⚡</span>
+          <div class="osm-title">Confirmamos</div>
+          <div class="osm-text">Te escribimos por WhatsApp</div>
+        </div>
+        <div class="order-step-mini">
+          <span class="osm-icon">🖨️</span>
+          <div class="osm-title">Imprimimos</div>
+          <div class="osm-text">Y coordinamos entrega</div>
+        </div>
+      </div>
+
+      <!-- MAIN BUTTONS -->
+      <div class="order-main">
+
+        <!-- FORM BUTTON -->
+        <div>
+          <a class="order-form-btn"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScc4xATxV-LuUxmSILvMvRiV-SMFKYnm8awGVSdwKNXCVsP5w/viewform"
+            target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            Llenar formulario de pedido
+          </a>
+          <div style="font-size:12px; color:rgba(255,255,255,0.25); margin-top:8px;">
+            Sube hasta 10 fotos · Abre en nueva pestaña
+          </div>
+        </div>
+
+        <div class="order-or">o si prefieres</div>
+
+        <!-- WHATSAPP BUTTON -->
+        <div>
+          <a class="order-wa-btn"
+            href="https://wa.me/51953711615?text=Hola%20FotoExpress!%20👋%20Quiero%20hacer%20un%20pedido%20de%20fotos.%20¿Me%20pueden%20ayudar?"
+            target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.528 5.855L.057 23.07a.75.75 0 0 0 .92.918l5.356-1.503A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.718 9.718 0 0 1-4.979-1.367l-.356-.211-3.699 1.037 1.002-3.595-.232-.369A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+            Pedir directo por WhatsApp
+          </a>
+          <div style="font-size:12px; color:rgba(255,255,255,0.25); margin-top:8px;">
+            Ideal para Pack 20 o Pack 50
+          </div>
+        </div>
+
+        <div class="order-features">
+          <span class="order-feat">💜 Yape</span>
+          <span class="order-feat">💙 Plin</span>
+          <span class="order-feat">🏦 BCP</span>
+          <span class="order-feat">🚚 Delivery Huancayo</span>
+          <span class="order-feat">📦 Envíos a todo el Perú</span>
+        </div>
+
+        <p class="order-note">Te respondemos en menos de 24 horas · Lunes a Sábado</p>
+      </div>
     </div>
   </div>
 </section>
