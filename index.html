@@ -12,7 +12,6 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
     --dark: #0f0f0f;
-    --dark2: #1a1a1a;
     --cream: #f5f0e8;
     --cream2: #ede8de;
     --green: #25D366;
@@ -29,7 +28,7 @@
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(245,240,232,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
   .nav-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--dark); text-decoration: none; }
   .nav-logo span { color: var(--gold); }
-  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links { display: flex; gap: 24px; list-style: none; }
   .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; transition: color 0.2s; }
   .nav-links a:hover { color: var(--text); }
   .nav-wa { background: var(--green); color: white; padding: 8px 18px; border-radius: 50px; text-decoration: none; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 6px; transition: background 0.2s; }
@@ -66,23 +65,34 @@
   .step h3 { font-size: 16px; font-weight: 500; margin-bottom: 8px; }
   .step p { font-size: 14px; color: var(--muted); line-height: 1.6; font-weight: 300; }
 
-  /* PRICES */
-  .prices-section { background: var(--dark); padding: 88px 24px; }
-  .prices-section .section-title { color: white; }
-  .prices-section .section-sub { color: rgba(255,255,255,0.45); }
-  .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 24px; }
-  .price-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 28px 24px; position: relative; transition: border-color 0.2s; }
-  .price-card:hover { border-color: rgba(201,168,76,0.3); }
-  .price-card.featured { background: rgba(201,168,76,0.07); border-color: rgba(201,168,76,0.35); }
-  .feat-badge { position: absolute; top: -11px; left: 24px; background: var(--gold); color: var(--dark); font-size: 11px; font-weight: 500; padding: 3px 12px; border-radius: 50px; }
-  .price-card h3 { font-size: 15px; font-weight: 500; color: white; margin-bottom: 4px; }
-  .price-card .dims { font-size: 12px; color: rgba(255,255,255,0.35); margin-bottom: 20px; font-weight: 300; }
-  .price-amount { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: white; line-height: 1; }
-  .price-amount span { font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.45); margin-left: 4px; }
-  .packs-title { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.5); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; margin-top: 36px; }
-  .packs { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
-  .pack { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; transition: border-color 0.2s; }
-  .pack:hover { border-color: rgba(255,255,255,0.15); }
+  /* CALCULATOR */
+  .calc-section { background: var(--dark); padding: 88px 24px; }
+  .calc-section .section-title { color: white; }
+  .calc-section .section-sub { color: rgba(255,255,255,0.45); }
+  .calc-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 40px; max-width: 700px; margin: 0 auto; }
+  .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+  .calc-label { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px; font-weight: 500; }
+  .size-options { display: flex; flex-direction: column; gap: 8px; }
+  .size-btn { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 14px 18px; cursor: pointer; text-align: left; transition: all 0.2s; color: white; font-family: 'DM Sans', sans-serif; }
+  .size-btn:hover { border-color: rgba(201,168,76,0.4); background: rgba(201,168,76,0.05); }
+  .size-btn.active { border-color: var(--gold); background: rgba(201,168,76,0.1); }
+  .size-btn .size-name { font-size: 14px; font-weight: 500; }
+  .size-btn .size-price { font-size: 13px; color: var(--gold); margin-top: 2px; }
+  .qty-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .qty-btn { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px 8px; cursor: pointer; text-align: center; transition: all 0.2s; color: white; font-family: 'DM Sans', sans-serif; font-size: 14px; }
+  .qty-btn:hover { border-color: rgba(201,168,76,0.4); }
+  .qty-btn.active { border-color: var(--gold); background: rgba(201,168,76,0.1); color: var(--gold); font-weight: 500; }
+  .calc-total { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.25); border-radius: 16px; padding: 24px 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .calc-total-label { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+  .calc-total-amount { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; color: white; line-height: 1; }
+  .calc-total-detail { font-size: 13px; color: rgba(255,255,255,0.35); margin-top: 4px; }
+  .calc-cta { background: var(--green); color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-size: 15px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; white-space: nowrap; }
+  .calc-cta:hover { background: var(--green-dark); }
+  .packs-title { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.5); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; margin-top: 40px; }
+  .packs { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+  .pack { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: border-color 0.2s; }
+  .pack:hover { border-color: rgba(201,168,76,0.3); }
+  .pack.active { border-color: var(--gold); background: rgba(201,168,76,0.07); }
   .pack-name { font-size: 14px; color: white; }
   .pack-save { font-size: 11px; color: var(--green); margin-top: 2px; }
   .pack-price { font-family: 'Playfair Display', serif; font-size: 22px; color: white; font-weight: 700; }
@@ -96,65 +106,21 @@
   .del-price { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin-top: 14px; }
   .del-note { font-size: 12px; color: var(--muted); margin-top: 4px; font-weight: 300; }
 
-  /* PAYMENT - NEW SINGLE CARD DESIGN */
+  /* PAYMENT */
   .payment-section { background: var(--cream2); padding: 88px 24px; }
-  .pay-unified {
-    background: white;
-    border-radius: 24px;
-    border: 1px solid var(--border);
-    max-width: 480px;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-  .pay-header {
-    background: var(--dark);
-    padding: 28px 32px;
-    text-align: center;
-  }
+  .pay-unified { background: white; border-radius: 24px; border: 1px solid var(--border); max-width: 480px; margin: 0 auto; overflow: hidden; }
+  .pay-header { background: var(--dark); padding: 28px 32px; text-align: center; }
   .pay-header h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: white; font-weight: 700; margin-bottom: 6px; }
   .pay-header p { font-size: 13px; color: rgba(255,255,255,0.45); font-weight: 300; }
   .pay-apps { display: flex; gap: 8px; justify-content: center; margin-top: 14px; }
   .pay-app-badge { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.7); font-size: 12px; padding: 4px 14px; border-radius: 50px; }
   .pay-body { padding: 32px; text-align: center; }
-  .qr-placeholder {
-    width: 180px; height: 180px;
-    margin: 0 auto 20px;
-    border: 2px dashed var(--border);
-    border-radius: 16px;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    background: var(--cream);
-    color: var(--muted);
-    font-size: 13px;
-    font-weight: 300;
-    gap: 8px;
-  }
-  /* REPLACE qr-placeholder with qr-img once you have the QR image */
+  .qr-placeholder { width: 180px; height: 180px; margin: 0 auto 20px; border: 2px dashed var(--border); border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--cream); color: var(--muted); font-size: 13px; font-weight: 300; gap: 8px; }
   .qr-img { width: 180px; height: 180px; margin: 0 auto 20px; border-radius: 16px; display: block; object-fit: contain; }
   .pay-instruction { font-size: 14px; color: var(--muted); margin-bottom: 24px; font-weight: 300; line-height: 1.6; }
-  .show-number-btn {
-    background: var(--dark);
-    color: white;
-    border: none;
-    padding: 14px 32px;
-    border-radius: 50px;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    display: inline-flex; align-items: center; gap: 8px;
-    transition: background 0.2s, transform 0.15s;
-    width: 100%;
-    justify-content: center;
-  }
-  .show-number-btn:hover { background: #2a2a2a; transform: translateY(-1px); }
-  .number-reveal {
-    display: none;
-    margin-top: 20px;
-    background: var(--cream);
-    border-radius: 16px;
-    padding: 20px;
-    border: 1px solid var(--border);
-  }
+  .show-number-btn { background: var(--dark); color: white; border: none; padding: 14px 32px; border-radius: 50px; font-size: 15px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; width: 100%; justify-content: center; }
+  .show-number-btn:hover { background: #2a2a2a; }
+  .number-reveal { display: none; margin-top: 20px; background: var(--cream); border-radius: 16px; padding: 20px; border: 1px solid var(--border); }
   .number-reveal.visible { display: block; }
   .number-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
   .number-big { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--dark); letter-spacing: 2px; }
@@ -166,14 +132,17 @@
   .bcp-desc { font-size: 13px; color: var(--muted); font-weight: 300; line-height: 1.6; }
   .bcp-badge { display: inline-block; background: var(--cream); border: 1px solid var(--border); color: var(--muted); font-size: 12px; padding: 6px 16px; border-radius: 50px; margin-top: 12px; font-style: italic; }
 
+  /* ORDER FORM SECTION */
+  .order-section { background: var(--dark); padding: 88px 24px; }
+  .order-section .section-title { color: white; }
+  .order-section .section-sub { color: rgba(255,255,255,0.45); }
+  .form-wrapper { max-width: 700px; margin: 0 auto; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); }
+  .form-wrapper iframe { width: 100%; height: 900px; border: none; display: block; background: white; }
+
   /* CTA */
-  .cta-section { background: var(--dark); padding: 100px 24px; text-align: center; position: relative; overflow: hidden; }
-  .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(37,211,102,0.08) 0%, transparent 70%); pointer-events: none; }
-  .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 56px); font-weight: 700; color: white; margin-bottom: 16px; letter-spacing: -0.5px; position: relative; }
-  .cta-section p { font-size: 16px; color: rgba(255,255,255,0.45); margin-bottom: 36px; font-weight: 300; position: relative; }
-  .cta-form-link { display: block; margin-top: 20px; font-size: 13px; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; position: relative; }
-  .cta-form-link:hover { color: rgba(255,255,255,0.6); }
-  .cta-form-link span { text-decoration: underline; }
+  .cta-section { background: var(--cream2); padding: 100px 24px; text-align: center; }
+  .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 52px); font-weight: 700; margin-bottom: 16px; letter-spacing: -0.5px; }
+  .cta-section p { font-size: 16px; color: var(--muted); margin-bottom: 36px; font-weight: 300; }
 
   /* FOOTER */
   footer { background: #080808; padding: 36px 24px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
@@ -190,6 +159,8 @@
     .step:first-child { border-radius: 16px 16px 0 0; }
     .step:last-child { border-radius: 0 0 16px 16px; }
     .steps { grid-template-columns: 1fr; gap: 2px; }
+    .calc-grid { grid-template-columns: 1fr; }
+    .form-wrapper iframe { height: 1100px; }
   }
 </style>
 </head>
@@ -202,9 +173,9 @@
     <li><a href="#como-funciona">Cómo funciona</a></li>
     <li><a href="#precios">Precios</a></li>
     <li><a href="#entrega">Entrega</a></li>
-    <li><a href="#pago">Pago</a></li>
+    <li><a href="#pedido">Hacer pedido</a></li>
   </ul>
-  <a class="nav-wa" href="https://wa.me/51953711615" target="_blank" rel="noopener">
+  <a class="nav-wa" href="https://wa.me/51953711615?text=Hola%20FotoExpress!%20👋%20Quiero%20hacer%20un%20pedido%20de%20fotos.%20¿Me%20pueden%20ayudar?" target="_blank" rel="noopener">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.528 5.855L.057 23.07a.75.75 0 0 0 .92.918l5.356-1.503A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.718 9.718 0 0 1-4.979-1.367l-.356-.211-3.699 1.037 1.002-3.595-.232-.369A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
     Pedir ahora
   </a>
@@ -217,7 +188,7 @@
     <h1>Tus fotos<br/><em>impresas</em> en casa</h1>
     <p class="hero-sub">Envíanos tus fotos, las imprimimos en papel profesional y te las llevamos a domicilio en Huancayo o a todo el Perú.</p>
     <div class="hero-btns">
-      <a class="btn-wa" href="https://wa.me/51953711615" target="_blank" rel="noopener">
+      <a class="btn-wa" href="https://wa.me/51953711615?text=Hola%20FotoExpress!%20👋%20Quiero%20hacer%20un%20pedido%20de%20fotos.%20¿Me%20pueden%20ayudar?" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.528 5.855L.057 23.07a.75.75 0 0 0 .92.918l5.356-1.503A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.718 9.718 0 0 1-4.979-1.367l-.356-.211-3.699 1.037 1.002-3.595-.232-.369A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
         Hacer mi pedido
       </a>
@@ -241,60 +212,96 @@
     <div class="steps">
       <div class="step">
         <div class="step-num">01</div>
-        <h3>Envíanos tus fotos</h3>
-        <p>Escríbenos por WhatsApp o llena el formulario online. Dinos el tamaño y la cantidad que quieres.</p>
+        <h3>Llena el formulario</h3>
+        <p>Ingresa tus datos, elige el tamaño y sube tus fotos directamente en la página. Todo en un solo lugar.</p>
       </div>
       <div class="step">
         <div class="step-num">02</div>
         <h3>Confirma y paga</h3>
-        <p>Te enviamos el total. Pagas fácil por Yape, Plin o transferencia BCP. En segundos te confirmamos tu pedido.</p>
+        <p>Te contactamos por WhatsApp con el total. Pagas fácil por Yape, Plin o transferencia BCP.</p>
       </div>
       <div class="step">
         <div class="step-num">03</div>
         <h3>Recibe tus fotos</h3>
-        <p>Imprimimos con calidad profesional y coordinamos la entrega por WhatsApp. Delivery en Huancayo o envío a provincias.</p>
+        <p>Imprimimos con calidad profesional y coordinamos la entrega. Delivery en Huancayo o envío a provincias.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRECIOS -->
-<section class="prices-section" id="precios">
+<!-- CALCULADORA DE PRECIOS -->
+<section class="calc-section" id="precios">
   <div class="container">
-    <p class="section-label" style="color: var(--gold);">Precios</p>
-    <h2 class="section-title">Claro y sin sorpresas</h2>
-    <p class="section-sub">Impresión en papel fotográfico profesional, resistente al agua y a los dedos.</p>
-    <div class="price-grid">
-      <div class="price-card featured">
-        <div class="feat-badge">Más pedida</div>
-        <h3>Foto 10×15 cm</h3>
-        <p class="dims">Tamaño clásico · 4×6"</p>
-        <div class="price-amount">S/. 2.50 <span>/ foto</span></div>
+    <p class="section-label" style="color:var(--gold);">Precios</p>
+    <h2 class="section-title">Calcula tu pedido</h2>
+    <p class="section-sub">Selecciona tamaño y cantidad para ver el total al instante.</p>
+
+    <div class="calc-box">
+      <div class="calc-grid">
+        <!-- SIZE -->
+        <div>
+          <div class="calc-label">Tamaño de foto</div>
+          <div class="size-options">
+            <button class="size-btn active" onclick="selectSize(this, 2.50, '10×15 cm')" data-price="2.50">
+              <div class="size-name">Foto 10×15 cm</div>
+              <div class="size-price">S/. 2.50 por foto</div>
+            </button>
+            <button class="size-btn" onclick="selectSize(this, 5.00, '13×18 cm')" data-price="5.00">
+              <div class="size-name">Foto 13×18 cm</div>
+              <div class="size-price">S/. 5.00 por foto</div>
+            </button>
+            <button class="size-btn" onclick="selectSize(this, 7.00, '15×20 cm')" data-price="7.00">
+              <div class="size-name">Foto 15×20 cm</div>
+              <div class="size-price">S/. 7.00 por foto</div>
+            </button>
+          </div>
+        </div>
+        <!-- QUANTITY -->
+        <div>
+          <div class="calc-label">Cantidad</div>
+          <div class="qty-options">
+            <button class="qty-btn active" onclick="selectQty(this, 1)">1 foto</button>
+            <button class="qty-btn" onclick="selectQty(this, 2)">2 fotos</button>
+            <button class="qty-btn" onclick="selectQty(this, 3)">3 fotos</button>
+            <button class="qty-btn" onclick="selectQty(this, 4)">4 fotos</button>
+            <button class="qty-btn" onclick="selectQty(this, 5)">5 fotos</button>
+            <button class="qty-btn" onclick="selectQty(this, 6)">6 fotos</button>
+            <button class="qty-btn" onclick="selectQty(this, 7)">7 fotos</button>
+            <button class="qty-btn" onclick="selectQty(this, 8)">8 fotos</button>
+            <button class="qty-btn" onclick="selectQty(this, 9)">9 fotos</button>
+            <button class="qty-btn" onclick="selectQty(this, 10)">10 fotos</button>
+          </div>
+        </div>
       </div>
-      <div class="price-card">
-        <h3>Foto 13×18 cm</h3>
-        <p class="dims">Tamaño mediano · 5×7"</p>
-        <div class="price-amount">S/. 5.00 <span>/ foto</span></div>
+
+      <!-- TOTAL -->
+      <div class="calc-total">
+        <div>
+          <div class="calc-total-label">Total estimado</div>
+          <div class="calc-total-amount" id="totalAmount">S/. 2.50</div>
+          <div class="calc-total-detail" id="totalDetail">1 foto · 10×15 cm · S/. 2.50 c/u</div>
+        </div>
+        <a class="calc-cta" href="https://wa.me/51953711615?text=Hola%20FotoExpress!%20Quiero%20hacer%20un%20pedido.%20Vi%20sus%20precios%20en%20la%20web%20y%20me%20interesa%20imprimir%20mis%20fotos%20🖨️" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.528 5.855L.057 23.07a.75.75 0 0 0 .92.918l5.356-1.503A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.718 9.718 0 0 1-4.979-1.367l-.356-.211-3.699 1.037 1.002-3.595-.232-.369A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+          Pedir por WhatsApp
+        </a>
       </div>
-      <div class="price-card">
-        <h3>Foto 15×20 cm</h3>
-        <p class="dims">Tamaño grande · 6×8"</p>
-        <div class="price-amount">S/. 7.00 <span>/ foto</span></div>
-      </div>
-    </div>
-    <p class="packs-title">Packs con descuento</p>
-    <div class="packs">
-      <div class="pack">
-        <div><div class="pack-name">Pack 10 fotos 10×15</div><div class="pack-save">Ahorras S/. 7</div></div>
-        <div class="pack-price">S/. 18</div>
-      </div>
-      <div class="pack">
-        <div><div class="pack-name">Pack 20 fotos 10×15</div><div class="pack-save">Ahorras S/. 18</div></div>
-        <div class="pack-price">S/. 32</div>
-      </div>
-      <div class="pack">
-        <div><div class="pack-name">Pack 50 fotos 10×15</div><div class="pack-save">Ahorras S/. 55</div></div>
-        <div class="pack-price">S/. 70</div>
+
+      <!-- PACKS -->
+      <p class="packs-title">O elige un pack con descuento</p>
+      <div class="packs">
+        <div class="pack" onclick="selectPack(this, 18, 'Pack 10 fotos 10×15', 10)">
+          <div><div class="pack-name">Pack 10 fotos 10×15</div><div class="pack-save">Ahorras S/. 7</div></div>
+          <div class="pack-price">S/. 18</div>
+        </div>
+        <div class="pack" onclick="selectPack(this, 32, 'Pack 20 fotos 10×15', 20)">
+          <div><div class="pack-name">Pack 20 fotos 10×15</div><div class="pack-save">Ahorras S/. 18</div></div>
+          <div class="pack-price">S/. 32</div>
+        </div>
+        <div class="pack" onclick="selectPack(this, 70, 'Pack 50 fotos 10×15', 50)">
+          <div><div class="pack-name">Pack 50 fotos 10×15</div><div class="pack-save">Ahorras S/. 55</div></div>
+          <div class="pack-price">S/. 70</div>
+        </div>
       </div>
     </div>
   </div>
@@ -317,7 +324,7 @@
       <div class="del-card">
         <div class="del-icon">🚚</div>
         <h3>Envíos a provincias</h3>
-        <p>Enviamos a Lima, Cusco, Arequipa y todo el Perú por Olva Courier o Shalom. Empaque rígido, tus fotos llegan perfectas.</p>
+        <p>Enviamos a Lima, Cusco, Arequipa y todo el Perú por Olva Courier o Shalom.</p>
         <div class="del-price">S/. 15+</div>
         <div class="del-note">1 a 3 días hábiles</div>
       </div>
@@ -338,9 +345,7 @@
     <p class="section-label">Formas de pago</p>
     <h2 class="section-title">Paga como prefieras</h2>
     <p class="section-sub">Rápido, seguro y sin salir de casa.</p>
-
     <div class="pay-unified">
-      <!-- YAPE / PLIN -->
       <div class="pay-header">
         <h3>Yape &amp; Plin</h3>
         <p>Un solo número, paga con la app que prefieras</p>
@@ -351,37 +356,31 @@
       </div>
       <div class="pay-body">
         <!--
-          QR IMAGE INSTRUCTIONS:
-          1. Take a screenshot of your Yape QR code from the app
-          2. Upload the image to your GitHub repo as "yape-qr.png"
+          QR INSTRUCTIONS:
+          1. Screenshot your Yape QR from the app
+          2. Name it "yape-qr.png" and upload to GitHub alongside index.html
           3. Replace the div below with:
              <img class="qr-img" src="yape-qr.png" alt="QR Yape FotoExpress" />
         -->
         <div class="qr-placeholder">
           <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h.01M14 17h.01M17 14h.01M17 17h.01M20 14h.01M20 17h.01M17 20h.01M20 20h.01"/></svg>
-          <span>Sube tu QR aquí<br/>(ver instrucciones en el código)</span>
+          <span>QR Yape / Plin<br/>próximamente</span>
         </div>
-
-        <p class="pay-instruction">Escanea el QR con tu app Yape o Plin.<br/>O si prefieres, usa el número de celular:</p>
-
+        <p class="pay-instruction">Escanea el QR con tu app Yape o Plin.<br/>O usa el número de celular:</p>
         <button class="show-number-btn" onclick="toggleNumber(this)">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
           Ver número para pagar
         </button>
-
         <div class="number-reveal" id="numberReveal">
           <div class="number-label">Número Yape / Plin</div>
           <div class="number-big">953 711 615</div>
           <div class="number-note">Después de pagar, envíanos el comprobante por WhatsApp para confirmar tu pedido.</div>
         </div>
-
         <hr class="pay-divider" />
-
-        <!-- BCP -->
         <div class="bcp-section">
           <span class="bcp-icon">🏦</span>
           <div class="bcp-title">Transferencia BCP</div>
-          <p class="bcp-desc">Si prefieres pagar por transferencia bancaria, escríbenos por WhatsApp y te enviamos los datos de cuenta al instante.</p>
+          <p class="bcp-desc">Si prefieres pagar por transferencia bancaria, escríbenos por WhatsApp y te enviamos los datos al instante.</p>
           <span class="bcp-badge">Datos al confirmar pedido por WhatsApp</span>
         </div>
       </div>
@@ -389,17 +388,34 @@
   </div>
 </section>
 
-<!-- CTA -->
+<!-- FORMULARIO DE PEDIDO -->
+<section class="order-section" id="pedido">
+  <div class="container">
+    <p class="section-label" style="color:var(--gold);">Pedido online</p>
+    <h2 class="section-title">Haz tu pedido aquí</h2>
+    <p class="section-sub">Sube tus fotos y llena tus datos. Te contactamos por WhatsApp en menos de 24 horas.</p>
+    <div class="form-wrapper">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLScc4xATxV-LuUxmSILvMvRiV-SMFKYnm8awGVSdwKNXCVsP5w/viewform?embedded=true"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        title="Formulario de pedido FotoExpress Peru">
+        Cargando formulario...
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA WHATSAPP -->
 <section class="cta-section">
-  <div style="position:relative;">
-    <h2>¿Listo para imprimir<br/>tus recuerdos?</h2>
-    <p>Escríbenos ahora. Respondemos rápido y te ayudamos con tu pedido.</p>
-    <a class="btn-wa" href="https://wa.me/51953711615" target="_blank" rel="noopener" style="display:inline-flex;">
+  <div class="container" style="text-align:center;">
+    <p class="section-label">¿Prefieres escribirnos?</p>
+    <h2 class="section-title">Estamos en WhatsApp</h2>
+    <p class="section-sub">Respondemos rápido. Cuéntanos qué fotos quieres imprimir.</p>
+    <a class="btn-wa" href="https://wa.me/51953711615?text=Hola%20FotoExpress!%20👋%20Quiero%20hacer%20un%20pedido%20de%20fotos.%20¿Me%20pueden%20ayudar?" target="_blank" rel="noopener" style="display:inline-flex;">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.528 5.855L.057 23.07a.75.75 0 0 0 .92.918l5.356-1.503A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.718 9.718 0 0 1-4.979-1.367l-.356-.211-3.699 1.037 1.002-3.595-.232-.369A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
       Escribir por WhatsApp
-    </a>
-    <a class="cta-form-link" href="REEMPLAZAR_CON_LINK_GOOGLE_FORM" target="_blank" rel="noopener">
-      O si prefieres → <span>llenar el formulario de pedido online</span>
     </a>
   </div>
 </section>
@@ -412,11 +428,50 @@
 </footer>
 
 <!-- FLOATING WA -->
-<a class="wa-float" href="https://wa.me/51953711615" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+<a class="wa-float" href="https://wa.me/51953711615?text=Hola%20FotoExpress!%20👋%20Quiero%20hacer%20un%20pedido%20de%20fotos.%20¿Me%20pueden%20ayudar?" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
   <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.528 5.855L.057 23.07a.75.75 0 0 0 .92.918l5.356-1.503A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.718 9.718 0 0 1-4.979-1.367l-.356-.211-3.699 1.037 1.002-3.595-.232-.369A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
 </a>
 
 <script>
+  let currentPrice = 2.50;
+  let currentQty = 1;
+  let currentSizeName = '10×15 cm';
+
+  function selectSize(btn, price, name) {
+    document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.pack').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentPrice = price;
+    currentSizeName = name;
+    updateTotal();
+  }
+
+  function selectQty(btn, qty) {
+    document.querySelectorAll('.qty-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.pack').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentQty = qty;
+    updateTotal();
+  }
+
+  function selectPack(el, total, name, qty) {
+    document.querySelectorAll('.pack').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.qty-btn').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('totalAmount').textContent = 'S/. ' + total.toFixed(2);
+    document.getElementById('totalDetail').textContent = name;
+  }
+
+  function updateTotal() {
+    const total = currentPrice * currentQty;
+    document.getElementById('totalAmount').textContent = 'S/. ' + total.toFixed(2);
+    document.getElementById('totalDetail').textContent =
+      currentQty + ' foto' + (currentQty > 1 ? 's' : '') +
+      ' · ' + currentSizeName +
+      ' · S/. ' + currentPrice.toFixed(2) + ' c/u';
+  }
+
   function toggleNumber(btn) {
     const reveal = document.getElementById('numberReveal');
     const isVisible = reveal.classList.contains('visible');
