@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>FotoExpress Peru — Impresión de Fotos Profesional</title>
 <meta name="description" content="Imprime tus fotos con calidad de laboratorio. Delivery en Huancayo y envíos a todo el Perú. Paga por Yape, Plin o BCP." />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CTTRT3KK5J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CTTRT3KK5J');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -229,6 +237,7 @@
       <a class="btn-ghost" href="#precios">Ver precios →</a>
     </div>
     <div class="hero-tags">
+      <span class="hero-tag">Fotos 10×15 cm</span>
       <span class="hero-tag">Papel resistente al agua</span>
       <span class="hero-tag">Delivery Huancayo</span>
       <span class="hero-tag">Envíos a todo el Perú</span>
@@ -280,12 +289,12 @@
               <div class="size-name">Foto 10×15 cm</div>
               <div class="size-price">S/. 2.50 por foto</div>
             </button>
-            <button class="size-btn" onclick="selectSize(this, 5.00, '13×18 cm')" data-price="5.00">
-              <div class="size-name">Foto 13×18 cm</div>
+            <button class="size-btn disabled-size" disabled style="opacity:0.4; cursor:not-allowed; position:relative;">
+              <div class="size-name">Foto 13×18 cm <span style="font-size:10px; background:rgba(201,168,76,0.2); color:#c9a84c; padding:2px 8px; border-radius:50px; margin-left:6px; font-weight:500;">Próximamente</span></div>
               <div class="size-price">S/. 5.00 por foto</div>
             </button>
-            <button class="size-btn" onclick="selectSize(this, 7.00, '15×20 cm')" data-price="7.00">
-              <div class="size-name">Foto 15×20 cm</div>
+            <button class="size-btn disabled-size" disabled style="opacity:0.4; cursor:not-allowed; position:relative;">
+              <div class="size-name">Foto 15×20 cm <span style="font-size:10px; background:rgba(201,168,76,0.2); color:#c9a84c; padding:2px 8px; border-radius:50px; margin-left:6px; font-weight:500;">Próximamente</span></div>
               <div class="size-price">S/. 7.00 por foto</div>
             </button>
           </div>
